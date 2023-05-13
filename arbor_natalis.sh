@@ -4,7 +4,7 @@
 
 
 print_help() {
-  printf "Use: ./á̴͖̠͍̅͜ṟ̷͕̣͆̋̑b̵͈̩͍̈́o̷̡̞̬̓̔r̸̞̳͓̀-̴͓̰̤́̀̽͒n̵͓̐͗̀̈́͘a̷̭͕̠͊t̶͈͔͕̺̰̊̉å̵̘l̸̨̨̡͍͉̀͒̌͗͆i̵̞̰̦̓͌͝s̶̯̱̥̱̅̆̕ͅ.sh\n"
+  printf "Use: ./arbor_natalis.sh\n"
   printf "ARG - a non-negative height of an eternal horror\n"
 }
 
