@@ -39,11 +39,17 @@ print_padding() {
   local i=1;
   for ((i=1; i<=padding; i++)); do
     if (( $RANDOM % 10 < 4 )); then
-      printf "%c" "$(random_snow)"
+      printf "\e[37m%c\e[0m" "$(random_snow)"
     else
       printf " "
     fi
   done
+}
+
+random_toy_color() {
+  local colors=("\e[31m" "\e[33m" "\e[34m" "\e[35m" "\e[36m" "\e[37m")
+  local colors_length=${#colors[@]}
+  echo ${colors[$RANDOM % $colors_length]}
 }
 
 print_row() {
@@ -53,9 +59,11 @@ print_row() {
   print_padding $padding
   for ((j=1; j<=asterisks; ++j)); do
     if (( $RANDOM % 10 < 4 )); then
+      printf $(random_toy_color)
       printf "%c" "$(random_toy)"
+      printf "\e[0m"
     else
-      printf "*"
+      printf "\e[32m*\e[0m"
     fi
   done
   print_padding $padding
@@ -67,6 +75,7 @@ for ((i=1; i<=height; i++)); do
 done
 
 for ((i=1; i<=4; ++i)); do
+  printf "\e[37m"
   printf "%0.s·" $(seq 0 $((2*($height + $shift))))
-  printf "\n"
+  printf "\e[0m\n"
 done
